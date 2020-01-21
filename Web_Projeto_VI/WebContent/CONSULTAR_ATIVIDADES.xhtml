@@ -1,0 +1,97 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>TELA CONSULTAR ATIVIDADES</title>
+	<link rel="stylesheet" type="text/css"  href="css/cssmenu.css"/> 
+   <style type="text/css"> </style>
+</h:head>
+
+<h:body>
+	<!--     <div>
+ <ui:include src="MENU.xhtml"/>   
+    
+    </div> -->
+
+
+	<p:growl id="msgs" showDetail="false" showSummary="true" />
+
+<p:panel header="CONSULTA DE ATIVIDADES"> 
+
+	<h:form id="form">
+
+
+		<p:dataTable var="tarefa" value="#{beanTarefa.tarefas}"
+			scrollable="true" scrollWidth="100%" scrollHeight="300">
+
+
+			<p:column style="width:82px" headerText="Id">
+
+				<h:outputText value="#{tarefa.tarefa_id}" />
+			</p:column>
+
+			<p:column headerText="Empresa" width="200">
+				<h:outputText value="#{tarefa.empresa.empresa_nome}" />
+			</p:column>
+
+			<p:column headerText="Origem de contato" width="200">
+				<h:outputText value="#{tarefa.origem_contato.descricao}" />
+			</p:column>
+
+			<p:column headerText="Descrição" width="200">
+				<h:outputText value="#{tarefa.descricao}" />
+			</p:column>
+
+			<p:column headerText="Data" width="200">
+				<h:outputText value="#{tarefa.data_inicio}" pattern="dd/MM/yyyy"
+					mask="99/99/9999">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</h:outputText>
+			</p:column>
+
+			<p:column headerText="Prioridade" width="200">
+				<h:outputText value="#{tarefa.prioridade.descricao}" />
+			</p:column>
+
+			<p:column headerText="Usuario" width="200">
+				<h:outputText value="#{tarefa.usuario.usuario_nome}" />
+			</p:column>
+
+			<p:column headerText="Situação" width="200">
+				<h:outputText value="#{tarefa.situacao.descricao}" />
+			</p:column>
+
+			<p:column headerText="Solução" width="200">
+				<h:outputText value="#{tarefa.solucao}" />
+			</p:column>
+
+			<p:column headerText="Data" width="200">
+				<h:outputText value="#{tarefa.data_final}" pattern="dd/MM/yyyy"
+					mask="99/99/9999">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</h:outputText>
+			</p:column>
+
+
+
+			<p:column style="width:82px" headerText="Ação">
+
+				<p:commandButton id="Editar" title="Editar" icon="ui-icon-pencil"
+					action="#{beanTarefa.Editar(tarefa)}" />
+
+				<p:commandButton id="Excluir" title="Excluir" icon="ui-icon-trash"
+					action="#{beanTarefa.Excluir(tarefa)}" update="@form" />
+
+			</p:column>
+
+		</p:dataTable>
+
+		<p:commandButton icon="ui-icon-document" action="#{beanTarefa.Novo}" value="Novo Cadastro" />
+		<p:commandButton icon="ui-icon-document" action="#{beanTarefa.Voltar}" value="Home" />
+
+	</h:form>
+</p:panel>
+</h:body>
+</html>

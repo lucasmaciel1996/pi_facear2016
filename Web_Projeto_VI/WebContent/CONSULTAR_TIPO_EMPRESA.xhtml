@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>TELA CONSULTAR TIPO EMPRESA</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+	<p:growl id="msgs" showDetail="false" showSummary="true" />
+
+	<div>
+		<ui:include src="MENU.xhtml" />
+
+	</div>
+
+	<h:form id="form">
+
+		<p:dataTable var="tipo_empresa"
+			value="#{beanTipo_empresa.tipo_empresas}" reflow="true" rows="8"
+			paginator="true">>
+   
+    <f:facet name="header">
+				<h1>TIPO DE EMPRESA</h1>
+			</f:facet>
+			<p:column style="width:82px" headerText="Id">
+
+				<h:outputText value="#{tipo_empresa.tipo_empresa_id}" />
+			</p:column>
+
+			<p:column headerText="Tipo de Empresa">
+				<h:outputText value="#{tipo_empresa.descricao}" />
+			</p:column>
+			<p:column style="width:82px" headerText="Ação">
+				<p:commandButton id="Editar" title="Editar" icon="ui-icon-pencil"
+					action="#{beanTipo_empresa.editar(tipo_empresa)}" />
+
+				<p:commandButton id="Excluir" title="Excluir" icon="ui-icon-trash"
+					action="#{beanTipo_empresa.excluir(tipo_empresa)}" update="@form" />
+
+			</p:column>
+
+		</p:dataTable>
+
+		<p:commandButton icon="ui-icon-document"
+			action="#{beanTipo_empresa.novo(tipo_empresa)}" value="Novo Cadastro" />
+		<p:commandButton icon="ui-icon-document"
+			action="#{beanTipo_empresa.voltar(tipo_empresa)}" value="Home" />
+
+	</h:form>
+
+</h:body>
+
+</html>

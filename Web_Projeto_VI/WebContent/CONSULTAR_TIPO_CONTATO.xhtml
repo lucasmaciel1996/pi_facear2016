@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>TELA CONSULTAR TIPO CONTATO</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+	<p:growl id="msgs" showDetail="false" showSummary="true" />
+	<div>
+		<ui:include src="MENU.xhtml" />
+
+	</div>
+
+
+	<h:form id="form">
+
+		<p:dataTable var="tipo_contato"
+			value="#{beanTipo_contato.tipo_contatos}" reflow="true" rows="8"
+			paginator="true">>
+   
+    <f:facet name="header">
+				<h1>TIPO DE CONTATO</h1>
+			</f:facet>
+			<p:column style="width:82px" headerText="Id">
+
+				<h:outputText value="#{tipo_contato.tipo_contato_id}" />
+			</p:column>
+
+			<p:column headerText="Tipo de contato">
+				<h:outputText value="#{tipo_contato.descricao}" />
+			</p:column>
+			<p:column style="width:82px" headerText="Ação">
+
+				<p:commandButton id="Editar" title="Editar" icon="ui-icon-pencil"
+					action="#{beanTipo_contato.editar(tipo_contato)}" />
+
+				<p:commandButton id="Excluir" title="Excluir" icon="ui-icon-trash"
+					action="#{beanTipo_contato.excluir(tipo_contato)}" update="@form" />
+
+			</p:column>
+
+		</p:dataTable>
+
+		<p:commandButton icon="ui-icon-document"
+			action="#{beanTipo_contato.novo(tipo_contato)}" value="Novo Cadastro" />
+		<p:commandButton icon="ui-icon-document"
+			action="#{beanTipo_contato.voltar(tipo_contato)}" value="Home" />
+
+	</h:form>
+
+</h:body>
+
+
+
+</html>

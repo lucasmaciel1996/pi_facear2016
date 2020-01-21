@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>CONSULTAR LOGIN</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+
+	<p:growl id="msgs" showDetail="false" showSummary="true" />
+	<div>
+		<ui:include src="MENU.xhtml" />
+
+	</div>
+
+	<h:form id="form">
+
+		<p:dataTable var="login" value="#{beanLogin.logins}" reflow="true"
+			rows="8" paginator="true">
+
+			<f:facet name="header">
+				<h3>CONSULTAR USUÁRIO</h3>
+
+			</f:facet>
+
+			<p:column style="width:82px" headerText="Id">
+
+				<h:outputText value="#{login.id_login}" />
+			</p:column>
+
+			<p:column headerText="Nome" width="200">
+				<h:outputText value="#{login.login}" />
+			</p:column>
+
+			<p:column headerText="Senha" width="200">
+				<h:outputText value="#{login.senha}" />
+			</p:column>
+
+			<p:column style="width:82px" headerText="Ação">
+				<p:commandButton id="Editar" title="Editar"
+					action="#{beanLogin.Editar(login)}" icon="ui-icon-pencil"
+					update="@form" />
+
+				<p:commandButton id="Excluir" title="Excluir"
+					action="#{beanLogin.Excluir(login)}" icon="ui-icon-trash"
+					update="@form" />
+
+			</p:column>
+
+		</p:dataTable>
+
+		<p:commandButton icon="ui-icon-document" action="#{beanContato.novo}"
+			value="Novo Cadastro" />
+		<p:commandButton icon="ui-icon-document"
+			action="#{beanContato.voltar}" value="Home" />
+
+	</h:form>
+</h:body>
+</html>

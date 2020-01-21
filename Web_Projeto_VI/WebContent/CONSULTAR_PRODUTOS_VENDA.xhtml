@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>TELA CONSULTAR PRODUTOS DA VENDA</title>
+	<link rel="stylesheet" type="text/css"  href="css/cssmenu.css"/> 
+   <style type="text/css"> </style>
+</h:head>
+
+<h:body>
+	<!--     <div>
+ <ui:include src="MENU.xhtml"/>   
+    
+    </div> -->
+
+
+	<p:growl id="msgs" showDetail="false" showSummary="true" />
+
+<p:panel header="CONSULTA DE PRODUTOS DA VENDA"> 
+
+	<h:form id="form">
+
+
+		<p:dataTable var="produtos_venda" value="#{beanProdutos_venda.produtos_vendas}"
+			scrollable="true" scrollWidth="100%" scrollHeight="300">
+
+                <p:column headerText="Data" width="200">
+				<h:outputText value="#{tarefa.data_inicio}" pattern="dd/MM/yyyy"
+					mask="99/99/9999">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</h:outputText>
+				
+			</p:column>
+			<p:column style="width:82px" headerText="VENDA">
+
+				<h:outputText value="#{produtos_venda.venda.venda_id}" />
+			</p:column>
+
+			<p:column headerText="PRODUTO" width="200">
+				<h:outputText value="#{produtos_venda.produto.produto_id}" />
+			</p:column>
+
+			<p:column headerText="DESCRIÇÃO" width="200">
+				<h:outputText value="#{produtos_venda.produto.descricao}" />
+			</p:column>
+
+			<p:column headerText="QUANTIDADE" width="200">
+				<h:outputText value="#{produtos_venda.produto.quantidade}" />
+			</p:column>
+			
+			<p:column headerText="VALOR" width="200">
+				<h:outputText value="#{produtos_venda.produto.valor}" />
+			</p:column>
+
+		<p:column headerText="EMPRESA" width="200">
+				<h:outputText value="#{produtos_venda.empresa.empresa_id}" />
+			</p:column>
+		
+
+			<p:column headerText="USUARIO" width="200">
+				<h:outputText value="#{produtos_venda.usuario.usuario_id}" />
+			</p:column>
+			
+			<p:column headerText="PRODUTOS DA VENDA" width="200">
+				<h:outputText value="#{produtos_venda.produtos_venda_id}" />
+			</p:column>
+
+			<p:column style="width:82px" headerText="Ação">
+
+				<p:commandButton id="Editar" title="Editar" icon="ui-icon-pencil"
+					action="#{beanTarefa.editar(tarefa)}" />
+
+				<p:commandButton id="Excluir" title="Excluir" icon="ui-icon-trash"
+					action="#{beanTarefa.excluir(tarefa)}" update="@form" />
+
+			</p:column>
+
+		</p:dataTable>
+
+		<p:commandButton icon="ui-icon-document"
+			action="#{beanTarefa.novo(tarefa)}" value="Novo Cadastro" />
+			<p:commandButton icon="ui-icon-document"
+			action="#{beanTarefa.voltar(tarefa)}" value="Home" />
+
+	</h:form>
+</p:panel>
+</h:body>
+</html>

@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+       xmlns:ui="http://java.sun.com/jsf/facelets">
+ <h:head>
+ <title>TELA CONSULTAR ORIGEM CONTATO</title>
+   <link rel="stylesheet" type="text/css"  href="css/cssmenu.css"/> 
+   <style type="text/css"> </style>
+ </h:head>
+ 
+ <h:body>
+ <p:growl id="msgs" showDetail="false" showSummary="true"/>
+     <div>
+ <ui:include src="MENU.xhtml"/>   
+    
+    </div>
+ 
+      
+  <h:form id="form">
+  
+   <p:dataTable var="origem_contato" value="#{beanOrigem_contato.origem_contatos}" reflow="true" rows="8" paginator="true">>
+   
+    <f:facet name="header">
+          <h1> ORIGEM DO CONTATO </h1>
+    </f:facet>
+    <p:column style="width:82px" headerText="Id">
+    
+        <h:outputText value="#{origem_contato.origem_contato_id}" />
+    </p:column>
+ 
+    <p:column headerText="Tipo de contato">
+        <h:outputText value="#{origem_contato.descricao}" />
+    </p:column>  
+    <p:column style="width:82px" headerText="Ação">
+       <p:commandButton id="Editar" title="Editar" icon="ui-icon-pencil" action="#{beanOrigem_contato.editar(origem_contato)}" />
+      
+       <p:commandButton id="Excluir" title="Excluir" icon="ui-icon-trash" action="#{beanOrigem_contato.excluir(origem_contato)}" update="@form" />
+       
+      
+       
+    </p:column>  
+  
+    </p:dataTable>
+    
+     <p:commandButton icon="ui-icon-document" action="#{beanOrigem_contato.novo(origem_contato)}" value="Novo Cadastro"/>
+       <p:commandButton icon="ui-icon-document" action="#{beanOrigem_contato.voltar(origem_contato)}" value="Home"/>
+  
+  </h:form> 
+
+ </h:body> 
+    
+    
+    
+</html>

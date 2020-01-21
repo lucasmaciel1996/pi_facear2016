@@ -1,0 +1,28 @@
+<html  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html" 
+  xmlns:f="http://java.sun.com/jsf/core" 
+  xmlns:p="http://primefaces.org/ui" >
+  
+ 
+ <h:head>
+ <title>Otimizador de energia</title>
+  <link rel="stylesheet" type="text/css"  href="css/TelaCadastroEmpresa2.css"/> 
+   <style type="text/css"> </style>
+ </h:head>
+  
+ <h:body> 
+ 
+ <p:panel header="OTIMIZADOR DE ENERGIA"> 
+ <div id="logo">
+ 
+ </div>
+ 
+  <p:commandButton id="botao" action="#{beanVenda.novo(venda)}" value="Ligar" />
+   <p:commandButton id="botao1" action="#{beanVenda.novo(venda)}" value="Desligar" />
+ <p:commandButton id="configuracoes" icon="ui-icon-gear" action="#{Modos_de_consumo.xhtml}" value="Configurações" />
+ 
+ </p:panel>
+</h:body>
+
+
+</html> 

@@ -1,0 +1,301 @@
+*{ margin:0; padding:0;}
+
+body{ font:100% normal  arial, verdana, sans-serif;
+
+  
+  
+ 
+ }
+ 
+ .lampada6 {
+ position: center;
+  
+  
+ }
+ #logo{
+ 
+ widht:400px;
+ height:600px;
+ 
+  background-image:url('img/lampada_ligada.png');
+  background-repeat:no-repeat;
+  position:relative;
+  left:20%;
+ }
+ 
+ 
+ #botao{
+  widht:300px;
+ height:40px;
+ position:relative;
+  right:-15%;
+  top:-95px;
+ 
+ 
+ }
+ 
+ #configuracoes{
+ 
+  widht:300px;
+ height:40px;
+ position:relative;
+  left:30%;
+  top:-95px;
+ 
+ 
+ }
+ 
+ #botao1{
+  widht:100px;
+ height:40px;
+ position:relative;
+  right:-23%;
+  top:-95px;
+ 
+ 
+ }
+ 
+ #dia_semana{
+ widht:100px;
+ height:40px;
+ position:relative;
+  left:15%;
+  top:-95px;
+ 
+ 
+ 
+ }
+ 
+ 
+ #fim_semana{
+ 
+ widht:100px;
+ height:40px;
+ position:relative;
+  left:30%;
+  top:-95px;
+ 
+ 
+ }
+ 
+
+form,select,textarea{
+  margin:0; 
+  padding:0;
+  color:#6CA6CE;
+
+  }
+  span{
+     color:black; 
+  }
+  
+  menubar{
+     font-family: Arial, Helvetica, sans-serif;
+     color:black; 
+  }
+  
+.back{
+  background: red;
+}
+div.box {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    margin:0 auto;
+    width:800px;
+      /*cor fundo titulo texto */
+    background:#6CA6CE;
+    position:relative;
+    top:4px;
+      /*cor borda fundo texto */
+    border:10px solid #6CA6CE;
+    border:10px solid ;
+    border-radius: 30px;
+}
+
+toolbar { 
+      /*cor texto titulo  */
+    font-family: verdana;
+    font-style: italic;
+    color:#00008B;
+    font-size:14px;
+    
+}
+
+/* box */
+div.box label {
+    width:800px;
+    display: block;
+        /* cor fundo teste letras */
+    background-color:#AFEEEE;
+    /*
+    border-top:10px solid orange;*/
+    border-bottom:10px solid blue;
+    padding:10px 0 10px 0;
+}
+
+div.box label span {
+    display: block;
+  /*cor texto */
+    color: black;
+    font-size:16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    float:left;  
+    width:140px;
+    text-align:left;
+    padding:10px 50px 0 0;
+}
+
+input_text {
+    
+    position: relative;
+    right: 100px;
+    font-family: Arial;
+    font-size: 80px;
+    font-style: italic;
+    text-align: left;
+  /*cor fundo text area  */
+    background:red;
+    font-size:14px;
+     
+}
+
+div.box .message{
+    padding:10px 10px;
+    width:350px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 30px;
+    text-align:justify;
+    text-transform: capitalize;
+
+    /*cor fundo text area grande */
+    background:white;
+    overflow:hidden;
+    height:50px;
+}
+
+p:button{
+       /*cor botao enviar fundo */
+    background:orange;
+    border:1px;
+    position: relative;
+    top:200px;
+    left:0px;
+    text-align: center;
+    width:130px;
+    height:40px;
+}
+
+button-ui{
+       /*cor botao enviar fundo */
+    background:#408080;
+    border:1px;
+    position: relative;
+    top:30px;
+    left:0px;
+    text-align: center;
+    width:130px;
+    height:40px;
+   
+}
+ /*campos imput  */
+ input{
+    width: 500px;
+    padding:5px 5px;
+    font-family: Arial;
+    font-style: normal;
+    text-transform: capitalize;
+    text-align: center;
+    font-size:16px;
+    color:black;
+  
+   
+
+}
+
+ p:tollbar{
+    width: 500px;
+    padding:5px 5px;
+    font-family: Arial;
+    font-style: normal;
+    text-transform: capitalize;
+    text-align: center;
+    font-size:16px;
+    color:black;
+  
+   
+
+}
+ select {
+    width: 370px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    text-transform: capitalize;
+    text-align: center;
+    font-size:16px;
+    color:red;
+    /*cor combox   */
+    background:lightred;
+   
+    
+}
+
+legend{
+
+    /*Define a tamanho da fonte para a legenda do FieldSet */
+
+    font-size: 12px
+
+}
+
+
+.campos{
+  align-items: center;
+
+}
+
+/*.campo_id{
+  width:130px;
+  height: 15px;
+  text-align: left;*/
+}
+
+input{
+  background-color:white;
+}
+
+
+}
+/*.botaopqn{
+  width: 30px;
+  height: 25px;
+  background-color:red;
+  border-radius: 50px;
+  position: relative;
+   top:50px;
+  left:50px;*/
+
+}
+/*.btn{
+  width: 200px;
+  height: 40px;
+  position: relative;
+  left:500px;
+  border-radius: 20px;*/
+}
+/*.btn2{
+    width: 120px;
+    height: 35px;
+    position: relative;
+    left:50px;*/
+   
+}
+
+ /*.foto_logo{
+  width: 150px;
+  height: 150px;
+  background-color:#0000FF;
+  border-radius: 80px;*/
+
+}

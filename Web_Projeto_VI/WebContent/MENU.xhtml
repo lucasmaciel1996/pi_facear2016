@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>TELA MENU PRINCIPAL</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+
+</h:head>
+<h:body>
+	<h:form>
+		<p:growl id="messages" />
+
+		<div class="logo">
+			<span class="clm">CLM</span>System
+		</div>
+		<p:menubar autoSubmenuDisplay="true" styleClass="menubar">
+		
+			<p:submenu label="Cadastrar" icon="ui-icon-note">
+				<p:menuitem value=" Empresa" url="CONSULTAR_EMPRESA.xhtml" />
+				<p:menuitem value="Produto" url="CONSULTAR_PRODUTO.xhtml" />
+				<p:menuitem value="Atividades" url="CONSULTAR_ATIVIDADES.xhtml" />
+				
+			</p:submenu>
+			<p:submenu label="Negócios" icon="ui-icon-note">
+				<p:menuitem value="Vendas" url="CONSULTAR_VENDAS.xhtml" />
+				<p:menuitem value="Nova Venda" url="CADASTRAR_VENDAS.xhtml" />
+			</p:submenu>
+			<p:submenu label="Historico" icon="ui-icon-folder-open">
+			
+			    <p:menuitem value="Situação" url="CONSULTAR_SITUACAO.xhtml" />
+				<p:menuitem value="Origem Contato" url="CONSULTAR_ORIGEM_CONTATOS.xhtml" />
+				<p:menuitem value="Tipo Telefone" url="CONSULTAR_TIPO_TELEFONE.xhtml" />
+				<p:menuitem value="Tipo Comunicador" url="CONSULTAR_TIPO_COMUNICADOR.xhtml" />
+				<p:menuitem value="Tipo Contato" url="CONSULTAR_TIPO_CONTATO.xhtml" />
+				<p:menuitem value="Tipo Empresa" url="CONSULTAR_TIPO_EMPRESA.xhtml" />
+				<p:menuitem value="Produto" url="CONSULTAR_PRODUTO.xhtml" />
+				<p:menuitem value="Tipo Ligação" url="CONSULTAR_TIPO_LIGACAO.xhtml" />
+				
+			
+				<p:menuitem value="Ligação" url="CONSULTAR_HISTORICO_LIGACAO.xhtml" />
+
+				<p:menuitem value="Atividades" url="CADASTRAR_ATIVIDADES" />
+			</p:submenu>
+			
+	
+		</p:menubar>
+	</h:form>
+
+</h:body>
+</html>

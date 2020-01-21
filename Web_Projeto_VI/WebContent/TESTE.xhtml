@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html" 
+  xmlns:f="http://java.sun.com/jsf/core" 
+  xmlns:p="http://primefaces.org/ui" >
+  
+<h:head>
+   <title>TELA PRINCIPAL</title>
+   <link rel="stylesheet" type="text/css"  href="css/cssmenu.css"/> 
+</h:head>
+<h:body>
+
+<h:form>  
+    <p:growl id="messages"/>
+ 
+     <p:menubar>
+           <p:submenu label="Cadastrar" icon="ui-icon-document">
+            
+                <p:menuitem value=" Empresa" url="CadastroEmpresa.xhtml" />
+                <p:menuitem value="Tipo de Empresa" url="TipoEmpresa.xhtml" />
+                <p:menuitem value="Contato da Empresa" url="ContatoEmpresa.xhtml" />
+                <p:menuitem value="Tipo de Comunicador" url="TipoComunicador.xhtml" />
+                <p:menuitem value="Tipo de Situação" url="TipoSituacao.xhtml" />
+                <p:menuitem value="Tipo Contato" url="TipoContato.xhtml" />
+                <p:menuitem value="Tipo Telefone" url="TipoTelefone.xhtml" />
+                <p:menuitem value="Origem Contato" url="OrigemContatos.xhtml" />
+                <p:menuitem value="Produto" url="CadastrarProduto.xhtml" /> 
+            </p:submenu>
+        
+        <p:submenu label="Vendas" icon="ui-icon-document">
+            <p:submenu label="Consultar" icon="ui-icon-contact">
+                <p:menuitem value="Vendas" url="#" />
+                <p:menuitem value="Nova Venda" url="#" />
+        </p:submenu>
+            <p:menuitem value="Open" url="#" />
+            <p:separator />
+            <p:menuitem value="Quit" url="#" />
+        </p:submenu>
+        
+         <p:submenu label="Historico" icon="ui-icon-gear">
+            <p:submenu label="Buscar" icon="ui-icon-contact">
+                <p:menuitem value="Vendas" url="#" />
+                <p:menuitem value="Atividades" url="#" />
+        </p:submenu>
+        </p:submenu>
+ 
+        <p:submenu label="Editar" icon="ui-icon-pencil">
+            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+        </p:submenu>
+    </p:menubar>   
+    
+        <h:form>
+            <p:messages autoUpdate="true" closable="true" />
+
+            <p:toolbar>
+             <p:toolbarGroup heigth="5" >
+                
+                 <h5>TELA PRINCIPAL</h5>
+                </p:toolbarGroup>
+            </p:toolbar>
+
+            <p:panelGrid columns="2" id="panel">
+
+                <p:outputLabel value="Nome" for="nome" />
+                <p:inputText id="nome" size="50"
+                    value="#{EmpresaBean.empresa.empresa_nome}" />
+
+                <p:outputLabel value="CNPJ" for="cnpj" />
+                <p:inputText id="cnpj" size="50"
+                    value="#{EmpresaBean.empresa.cnpj}" />
+
+                <p:outputLabel value="Endereço" for="endereco" />
+                <p:inputText id="endereco" size="50"
+                    value="#{EmpresaBean.empresa.endereco}" />
+
+                <p:outputLabel value="Incrição Estadual" for="inscricao_estadual" />
+                <p:inputText id="inscricao_estadual" size="50"
+                    value="#{EmpresaBean.empresa.inscricao_estadual}" />
+                    
+                    <p:outputLabel value="Telefone" for="telefone" />
+                <p:inputText id="telefone" size="50"
+                    value="#{EmpresaBean.empresa.telefone}" />
+                    
+                    <p:outputLabel value="Fax" for="fax" />
+                <p:inputText id="fax" size="50"
+                    value="#{EmpresaBean.empresa.fax}" />
+                    
+                    <p:outputLabel value="Site" for="site" />
+                <p:inputText id="site" size="50"
+                    value="#{EmpresaBean.empresa.site}" />
+
+
+            </p:panelGrid>
+        </h:form>
+        <p:separator style="margin-top: 20px" />
+
+        <h:form>
+            <p:dataTable id="empresaTable"
+                value="#{EmpresaBean.empresas}" var="empresa"
+                rows="20">
+                
+                <p:column headerText="Id">
+                    <h:outputText value="#{empresa.empresa_id}" />
+                </p:column>
+
+                <p:column headerText="Nome">
+                    <h:outputText value="#{empresa.empresa_nome}" />
+                </p:column>
+
+
+                <p:column headerText="CNPJ">
+                    <h:outputText value="#{empresa.cnpj}" />
+                </p:column>
+
+
+                <p:column headerText="Endereço">
+                    <h:outputText value="#{empresa.endereco}" />
+                </p:column>
+
+
+                <p:column headerText="Incrição Estadual">
+                    <h:outputText value="#{empresa.incricao_estadual}" />
+                </p:column>
+                
+                <p:column headerText="Telefone">
+                    <h:outputText value="#{empresa.telefone}" />
+                </p:column>
+                
+                <p:column headerText="Fax">
+                    <h:outputText value="#{empresa.fax}" />
+                </p:column>
+                
+                <p:column headerText="Site">
+                    <h:outputText value="#{empresa.site}" />
+                </p:column>
+
+
+
+            </p:dataTable>
+
+ </h:form>
+        </h:form>
+</h:body>
+</html>
+

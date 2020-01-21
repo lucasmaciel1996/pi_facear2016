@@ -1,0 +1,142 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>CADASTRAR ATIVIDADE</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+
+	<div>
+		<ui:include src="MENU.xhtml" />
+
+	</div>
+
+	<p:panel header="CADASTRO DE ATIVIDADES">
+
+
+
+		<h:form id="form1">
+
+
+
+			<p:messages id="msgs" showDetail="false" showSummary="true" />
+
+			<h:panelGrid columns="3" cellpadding="5" cellspacing="5">
+
+				<h:inputHidden value="ID" />
+				<h:inputHidden value="#{beanTarefa.tarefa.tarefa_id}"
+					style="width:400px" />
+				<h:inputHidden />
+
+				<p:outputLabel value="Empresa" />
+				<p:selectOneMenu value="#{beanTarefa.tarefa.empresa.empresa_id}"
+					style="width:400px" id="empresa" requered="true"
+					requeredMessage="Selecione uma Empresa">
+					<f:selectItem itemLabel="Selecione uma Empresa" itemValue="" />
+					<f:selectItems value="#{beanTarefa.empresas}" var="empresa"
+						itemValue="#{empresa.empresa_id}"
+						itemLabel="#{empresa.empresa_nome}" />
+				</p:selectOneMenu>
+
+				<p:commandButton icon="ui-icon-circle-plus"
+					action="#{beanTarefa.GravarSessaoEmpresa}" />
+
+				<p:outputLabel value="Origem do Contato" />
+				<p:selectOneMenu
+					value="#{beanTarefa.tarefa.origem_contato.origem_contato_id}"
+					style="width:400px" id="origem_contato" requered="true"
+					requeredMessage="Selecione a Origem do Contato">
+					<f:selectItem itemLabel="Selecione a Origem do Contato"
+						itemValue="" />
+					<f:selectItems value="#{beanTarefa.origem_contatos}"
+						var="origem_contato"
+						itemValue="#{origem_contato.origem_contato_id}"
+						itemLabel="#{origem_contato.descricao}" />
+				</p:selectOneMenu>
+
+				<p:commandButton icon="ui-icon-circle-plus"
+					action="#{beanTarefa.GravarSessaoOrigem_contato}" />
+
+				<h:outputText value="Descrição da Atividade" />
+				<p:inputText value="#{beanTarefa.tarefa.descricao}"
+					style="width:400px" />
+
+				<h:inputHidden />
+
+				<p:outputLabel value="Data" for="data" />
+				<p:calendar id="data" value="#{beanTarefa.tarefa.data_inicio}"
+					pattern="dd/MM/yyyy" mask="99/99/9999" />
+
+				<h:inputHidden />
+
+
+				<p:outputLabel value="Prioridade" />
+				<p:selectOneMenu
+					value="#{beanTarefa.tarefa.prioridade.prioridade_id}"
+					style="width:400px" id="prioridade" requered="true"
+					requeredMessage="Selecione uma Prioridade">
+					<f:selectItem itemLabel="Selecione uma Prioridade" itemValue="" />
+					<f:selectItems value="#{beanTarefa.prioridades}" var="prioridade"
+						itemValue="#{prioridade.prioridade_id}"
+						itemLabel="#{prioridade.descricao}" />
+				</p:selectOneMenu>
+
+				<p:commandButton icon="ui-icon-circle-plus"
+					action="#{beanTarefa.GravarSessaoPrioridade}" />
+
+				<p:outputLabel value="Usuario" />
+				<p:selectOneMenu value="#{beanTarefa.tarefa.usuario.usuario_id}"
+					style="width:400px" id="usuario" requered="true"
+					requeredMessage="Selecione uma Usuario">
+					<f:selectItem itemLabel="Selecione usuario" itemValue="" />
+					<f:selectItems value="#{beanTarefa.usuarios}" var="usuario"
+						itemValue="#{usuario.usuario_id}"
+						itemLabel="#{usuario.usuario_nome}" />
+				</p:selectOneMenu>
+
+				<p:commandButton icon="ui-icon-circle-plus"
+					action="#{beanTarefa.GravarSessaoUsuario}" />
+
+				<p:outputLabel value="Situação" />
+				<p:selectOneMenu value="#{beanTarefa.tarefa.situacao.situacao_id}"
+					style="width:400px" id="situacao"
+					requeredMessage="Selecione uma Situação">
+					<f:selectItem itemLabel="Selecione Situação" itemValue="" />
+					<f:selectItems value="#{beanTarefa.situacoes}" var="situacao"
+						itemValue="#{situacao.situacao_id}"
+						itemLabel="#{situacao.descricao}" />
+				</p:selectOneMenu>
+
+				<p:commandButton id="button" icon="ui-icon-circle-plus"
+					action="#{beanSituacao.GravarSessaoSituacaoRedirecionar}" />
+
+				<h:inputHidden value="Solução" />
+				<h:inputHidden value="#{beanTarefa.tarefa.solucao}"
+					style="width:400px" />
+				<h:inputHidden />
+
+
+				<h:inputHidden value="Data Final" for="data_final" />
+				<h:inputHidden  id="data_final" value="#{beanTarefa.tarefa.data_final}">
+					<f:convertDateTime pattern="MM/dd/yyyy" />
+				</h:inputHidden>
+
+			</h:panelGrid>
+
+			<p:commandButton action="#{beanTarefa.Salvar}" value="Salvar"
+				update=":form1:msgs, :form1" />
+			<p:commandButton action="#{beanTarefa.Voltar}" value="Home" />
+
+		</h:form>
+
+
+	</p:panel>
+</h:body>
+</html>

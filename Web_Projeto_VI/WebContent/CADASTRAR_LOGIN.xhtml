@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<h:head>
+	<title>CADASTRAR LOGIN</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+
+	<div>
+		<ui:include src="MENU.xhtml" />
+
+	</div>
+
+
+	<p:panel header="CADASTRAR USUÁRIO">
+
+		<h:form id="edicao">
+
+			<p:messages id="msgs" />
+
+			<h:panelGrid columns="2" cellpadding="5" cellspacing="5">
+
+				<h:inputHidden value="Id " />
+				<h:inputHidden value="#{beanLogin.login.id_login}" />
+
+				<h:outputText value="Nome" />
+				<p:inputText style="width:350px" value="#{beanLogin.login.login}" />
+
+				<h:outputText value="Senha" />
+				<p:password style="width:350px" value="#{beanLogin.login.senha}" />
+
+				<p:outputLabel value="Confirmar Senha" />
+				<p:password style="width:350px" id="senha_conf"
+					value="#{beanLogin.conf_senha}" />
+
+
+
+
+			</h:panelGrid>
+			<br />
+
+			<p:commandButton action="#{beanLogin.salvar}" value="Salvar"
+				update="@form:msgs" />
+
+		</h:form>
+	</p:panel>
+</h:body>
+</html>

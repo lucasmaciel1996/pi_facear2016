@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14772592587090" configfile="/Web_Integrador_VI/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="CADASTRAR_ATIVIDADES.xhtml" id="pf14806350316760" referenceLink="//@navigationRule.15/@navigationCase.0/@toViewId|" outlinks="pf14806350316761 pf14806412638730 pf14806417477973 pf14806426933916 pf14806426933917" inlinks="pf14806357515723 pf14806412638741 pf14806417477974 pf14806426933918 pf14806426933919" path="CADASTRAR_ATIVIDADES.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="CADASTRAR_SITUACAO.xhtml" id="pf14806350316762" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" outlinks="pf14806357515723 pf14807161991700" inlinks="pf14806350316761 pf14807168447102 pf14808141637100" path="CADASTRAR_SITUACAO.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="CADASTRAR_USUARIO.xhtml" id="pf14806412638742" referenceLink="//@navigationRule.12/@fromViewId|" outlinks="pf14806412638741 pf14808141637101" inlinks="pf14806412638730" path="CADASTRAR_USUARIO.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="CADASTRAR_PRIORIDADE.xhtml" id="pf14806417477975" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf14806417477974" inlinks="pf14806417477973" path="CADASTRAR_PRIORIDADE.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="CADASTRAR_ORIGEM_CONTATOS.xhtml" id="pf148064269339110" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf14806426933918" inlinks="pf14806426933916" path="CADASTRAR_ORIGEM_CONTATOS.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="CADASTRAR_EMPRESA.xhtml" id="pf148064269339111" referenceLink="//@navigationRule.15/@fromViewId|" outlinks="pf14806426933919 pf14809808273050" inlinks="pf14806426933917 pf14809808273051" path="CADASTRAR_EMPRESA.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="CONSULTAR_SITUACAO.xhtml" id="pf14807161991711" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf14807168447102 pf14808141637100" inlinks="pf14807161991700 pf14808141637101" path="CONSULTAR_SITUACAO.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="CADASTRAR_CONTATO.xhtml" id="pf14809808273052" referenceLink="//@navigationRule.15/@navigationCase.0/@toViewId|" outlinks="pf14809808273051" inlinks="pf14809808273050" path="CADASTRAR_CONTATO.xhtml"/>
+  <links id="pf14806350316761" target="pf14806350316762" source="pf14806350316760" outcome="recuperar"/>
+  <links id="pf14806357515723" target="pf14806350316760" source="pf14806350316762" outcome="sucesso"/>
+  <links id="pf14806412638730" target="pf14806412638742" source="pf14806350316760" outcome="tela1"/>
+  <links id="pf14806412638741" target="pf14806350316760" source="pf14806412638742" outcome="usuario"/>
+  <links id="pf14806417477973" target="pf14806417477975" source="pf14806350316760" outcome="recuperar"/>
+  <links id="pf14806417477974" target="pf14806350316760" source="pf14806417477975" outcome="prioridade"/>
+  <links id="pf14806426933916" target="pf148064269339110" source="pf14806350316760" outcome="recuperar"/>
+  <links id="pf14806426933918" target="pf14806350316760" source="pf148064269339110" outcome="origem_contato"/>
+  <links id="pf14806426933917" target="pf148064269339111" source="pf14806350316760" outcome="recuperar"/>
+  <links id="pf14806426933919" target="pf14806350316760" source="pf148064269339111" outcome="sucesso"/>
+  <links id="pf14807161991700" target="pf14807161991711" source="pf14806350316762" outcome="chamar"/>
+  <links id="pf14807168447102" target="pf14806350316762" source="pf14807161991711" outcome="sucesso"/>
+  <links id="pf14808141637100" target="pf14806350316762" source="pf14807161991711" outcome="sucesso"/>
+  <links id="pf14808141637101" target="pf14807161991711" source="pf14806412638742" outcome="chamar"/>
+  <links id="pf14809808273051" target="pf148064269339111" source="pf14809808273052" outcome="recupera"/>
+  <links id="pf14809808273050" target="pf14809808273052" source="pf148064269339111" outcome="sucesso"/>
+</pageflow:Pageflow>

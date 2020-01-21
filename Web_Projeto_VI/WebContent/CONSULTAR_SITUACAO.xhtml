@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>TELA CONSULTAR SITUAÇÃO</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+
+	<div class="cabecalho">
+		<ui:include src="MENU.xhtml" />
+
+	</div>
+
+	<p:growl id="msgs" showDetail="false" showSummary="true" />
+
+	<div class="body">
+
+		<h:form id="form">
+
+			<p:dataTable var="situacao" value="#{beanSituacao.situacoes}"
+				reflow="true" rows="10" paginator="true">>
+   
+    <f:facet name="header">
+					<h1>SITUAÇÃO</h1>
+				</f:facet>
+				<p:column style="width:82px" headerText="Id">
+
+					<h:outputText value="#{situacao.situacao_id}" />
+				</p:column>
+
+				<p:column headerText="Situação">
+					<h:outputText value="#{situacao.descricao}" />
+				</p:column>
+				<p:column style="width:82px" headerText="Ação">
+
+					<p:commandButton id="Editar" title="Editar" icon="ui-icon-pencil"
+						action="#{beanSituacao.editar(situacao)}" />
+
+					<p:commandButton id="Excluir" title="Excluir" icon="ui-icon-trash"
+						action="#{beanSituacao.excluir(situacao)}" update="@form" />
+
+				</p:column>
+
+			</p:dataTable>
+
+			<p:commandButton icon="ui-icon-document"
+				action="#{beanSituacao.novo(situacao)}" value="Novo Cadastro" />
+			<p:commandButton icon="ui-icon-document"
+				action="#{beanSituacao.voltar(situacao)}" value="Home" />
+
+		</h:form>
+
+	</div>
+	<div>
+		<ui:include src="rodape.xhtml" />
+
+	</div>
+
+</h:body>
+
+
+
+</html>

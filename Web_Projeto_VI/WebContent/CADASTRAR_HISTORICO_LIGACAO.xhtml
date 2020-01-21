@@ -1,0 +1,76 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<h:head>
+	<title>CADASTRAR LIGACAO</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+
+	<div>
+		<ui:include src="MENU.xhtml" />
+
+	</div>
+
+	<p:growl id="msgs" showDetail="false" showSummary="true" />
+
+	<p:panel header="CADASTRAR LIGAÇÃO">
+
+		<h:form id="edicao">
+
+			<p:growl id="messages" />
+
+			<h:panelGrid columns="2" cellpadding="5" cellspacing="5">
+
+				<h:inputHidden value="Id " />
+				<h:inputHidden
+					value="#{Bean_historico_ligacao.historico_ligacao.historico_id}" />
+
+				<h:outputText value="Descricao " />
+				<p:inputText style="width:350px"
+					value="#{Bean_historico_ligacao.historico_ligacao.descricao}" />
+
+
+				<h:outputText value="Data" />
+				<p:calendar value="#{Bean_historico_ligacao.historico_ligacao.data}"
+					showOn="button" />
+
+				<p:outputLabel value="Empresa" />
+				<p:selectOneMenu
+					value="#{Bean_historico_ligacao.historico_ligacao.empresa.empresa_id}"
+					style="width:250px" requiredMessage="Selecione Empresa">
+					<f:selectItem itemLabel="Selecione Empresa" itemValue="" />
+					<f:selectItems value="#{Bean_historico_ligacao.empresas}"
+						var="empresa" itemValue="#{empresa.empresa_id}"
+						itemLabel="#{empresa.empresa_nome}" />
+				</p:selectOneMenu>
+
+
+				<p:outputLabel value="Tipo Ligação" />
+				<p:selectOneMenu
+					value="#{Bean_historico_ligacao.historico_ligacao.tipo_ligacao.tipo_ligacao_id}"
+					style="width:250px" id="tipo" requered="true"
+					requeredMessage="Selecione Tipo Ligação">
+					<f:selectItem itemLabel="Selecione Tipo Ligação" itemValue="" />
+					<f:selectItems var="tipo"
+						value="#{Bean_historico_ligacao.tipo_ligacoes}"
+						itemValue="#{tipo.tipo_ligacao_id}" itemLabel="#{tipo.descricao}" />
+				</p:selectOneMenu>
+
+			</h:panelGrid>
+			<br />
+
+			<p:commandButton action="#{Bean_historico_ligacao.salvar}"
+				value="Salvar" update="@form" />
+
+		</h:form>
+	</p:panel>
+</h:body>
+</html>

@@ -1,0 +1,81 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<title>CADASTRAR VENDAS</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+
+
+	<p:panel header="CADASTRO DE VENDAS">
+
+		<h:form id="edicao">
+
+			<p:growl id="messages" />
+
+			<h:panelGrid columns="2" cellpadding="5" cellspacing="5">
+
+				<h:inputHidden value="Id" />
+				<h:inputHidden value="#{beanVenda.venda.venda_id}" style="width:70px" />
+						
+				<p:outputLabel value="Data " for="data_venda" />
+				<p:calendar id="data_venda" value="#{beanVenda.venda.data_venda}"
+					pattern="dd/MM/yyyy" mask="99/99/9999" />
+	
+				<p:outputLabel value="Empresa" />
+				<p:selectOneMenu value="#{beanVenda.venda.empresa.empresa_id}"
+					style="width:230px" id="empresa" requered="true"
+					requeredMessage="Selecione uma Empresa">
+					<f:selectItem itemLabel="Selecione uma Empresa" itemValue="" />
+					<f:selectItems value="#{beanVenda.empresas}" var="empresa"
+						itemValue="#{empresa.empresa_id}"
+						itemLabel="#{empresa.empresa_nome}" />
+				</p:selectOneMenu>
+			
+				<p:outputLabel value="Usuario" />
+				<p:selectOneMenu value="#{beanVenda.venda.usuario.usuario_id}"
+					style="width:230px" id="usuario" requered="true"
+					requeredMessage="Selecione um usuario">
+					<f:selectItem itemLabel="Selecione um usuario" itemValue="" />
+					<f:selectItems value="#{beanVenda.usuarios}" var="usuario"
+						itemValue="#{usuario.usuario_id}"
+						itemLabel="#{usuario.usuario_nome}" />
+				</p:selectOneMenu>
+				
+				<p:outputLabel value="Produto" />
+				<p:selectOneMenu value="#{beanVenda.venda.produto.produto_id}"
+					style="width:230px" id="produto" requered="true"
+					requeredMessage="Selecione um Produto">
+					<f:selectItem itemLabel="Selecione um Produto" itemValue="" />
+					<f:selectItems value="#{beanVenda.produtos}" var="produto"
+						itemValue="#{produto.produto_id}"
+						itemLabel="#{produto.descricao}" />
+				</p:selectOneMenu>
+				
+				<h:outputText value="Quantidade" />
+				<p:inputText value="#{beanVenda.venda.quantidade}"
+					style="width:80px" />
+					
+					
+
+				
+			</h:panelGrid>
+
+			<h3 style="margin-top: 0"></h3>
+		<p:separator />
+
+			<p:commandButton action="#{beanVenda.salvar}" value="Salvar"
+				update="@form" />
+			<p:commandButton action="#{beanVenda.voltar(venda)}" value="Voltar" />
+
+		</h:form>
+	</p:panel>
+</h:body>
+</html>

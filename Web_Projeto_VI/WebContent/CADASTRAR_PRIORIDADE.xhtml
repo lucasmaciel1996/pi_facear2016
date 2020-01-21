@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<h:head>
+	<title>CADASTRAR PRIORIDADE</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+
+</h:head>
+
+<h:body>
+	<div>
+		<ui:include src="MENU.xhtml" />
+
+	</div>
+
+	<p:panel header="CADASTRO DE PRIORIDADES">
+
+		<h:form id="edicao">
+
+
+			<p:growl id="messages" />
+
+			<h:panelGrid columns="2" cellpadding="5" cellspacing="5"
+				style="margin:50px">
+
+				<h:inputHidden value="Id: " />
+				<h:inputHidden value="#{beanPrioridade.prioridade.prioridade_id}" />
+
+				<h:outputText value="Descricao: " />
+				<p:inputText value="#{beanPrioridade.prioridade.descricao}" />
+
+			</h:panelGrid>
+			<br />
+			<p:commandButton action="#{beanPrioridade.salvar}" value="Salvar"
+				update="@form" />
+			<p:commandButton action="#{beanPrioridade.voltar(prioridade)}"
+				value="Voltar" />
+
+		</h:form>
+	</p:panel>
+
+</h:body>
+</html>

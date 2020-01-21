@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+    
+    
+   
+  <navigation-rule>
+    <from-view-id>CADASTRAR_ATIVIDADES.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>recuperar</from-outcome>
+      <to-view-id>CADASTRAR_SITUACAO.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+   <navigation-rule>
+    <from-view-id>CADASTRAR_SITUACAO.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>sucesso</from-outcome>
+      <to-view-id>CADASTRAR_ATIVIDADES.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+  <navigation-rule>
+    <from-view-id>CADASTRAR_ATIVIDADES.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>tela1</from-outcome>
+      <to-view-id>CADASTRAR_USUARIO.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+   <navigation-rule>
+    <from-view-id>CADASTRAR_USUARIO.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>usuario</from-outcome>
+      <to-view-id>CADASTRAR_ATIVIDADES.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+   <navigation-rule>
+    <from-view-id>CADASTRAR_ATIVIDADES.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>recuperar</from-outcome>
+      <to-view-id>CADASTRAR_PRIORIDADE.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+   <navigation-rule>
+    <from-view-id>CADASTRAR_PRIORIDADE.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>prioridade</from-outcome>
+      <to-view-id>CADASTRAR_ATIVIDADES.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+  <navigation-rule>
+    <from-view-id>CADASTRAR_ATIVIDADES.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>recuperar</from-outcome>
+      <to-view-id>CADASTRAR_ORIGEM_CONTATOS.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+  <navigation-rule>
+    <from-view-id>CADASTRAR_ORIGEM_CONTATOS.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>origem_contato</from-outcome>
+      <to-view-id>CADASTRAR_ATIVIDADES.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+   <navigation-rule>
+    <from-view-id>CADASTRAR_ATIVIDADES.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>recuperar</from-outcome>
+      <to-view-id>CADASTRAR_EMPRESA.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+  <navigation-rule>
+    <from-view-id>CADASTRAR_EMPRESA.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>sucesso</from-outcome>
+      <to-view-id>CADASTRAR_ATIVIDADES.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+  <navigation-rule>
+    <from-view-id>CADASTRAR_SITUACAO.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>chamar</from-outcome>
+      <to-view-id>CONSULTAR_SITUACAO.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+  <navigation-rule>
+    <from-view-id>CONSULTAR_SITUACAO.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>sucesso</from-outcome>
+      <to-view-id>CADASTRAR_SITUACAO.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+   <navigation-rule>
+    <from-view-id>CADASTRAR_USUARIO.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>chamar</from-outcome>
+      <to-view-id>CONSULTAR_SITUACAO.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+   <navigation-rule>
+    <from-view-id>CONSULTAR_SITUACAO.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>sucesso</from-outcome>
+      <to-view-id>CADASTRAR_SITUACAO.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+   <navigation-rule>
+    <from-view-id>CADASTRAR_CONTATO.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>recupera</from-outcome>
+      <to-view-id>CADASTRAR_EMPRESA.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+   <navigation-rule>
+    <from-view-id>CADASTRAR_EMPRESA.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>sucesso</from-outcome>
+      <to-view-id>CADASTRAR_CONTATO.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  
+ <!--  <navigation-rule>
+    <from-view-id>/Login.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>sucesso</from-outcome>
+      <to-view-id>/Principal.xhtml</to-view-id>
+    </navigation-case>  
+  </navigation-rule>     -->
+  
+</faces-config>

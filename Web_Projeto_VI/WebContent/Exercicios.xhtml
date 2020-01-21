@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html" 
+  xmlns:f="http://java.sun.com/jsf/core" 
+  xmlns:p="http://primefaces.org/ui" >
+  
+ <h:head>
+ 
+ <title>Exercicios</title>
+
+ <link rel="stylesheet" href="css/TelaCadastroEmpresa2.css" type="text/css"/>
+
+ </h:head>
+ 
+ <h:body>
+ <h:form>
+
+ 
+<h3>Empresas Casdastradas</h3>
+
+<p:dataTable var="emp" value="#{beanEmpresa.em}" reflow="true" rows="5" paginator="true">
+    <p:column headerText="Id">
+        <h:outputText value="#{em.empresa_id}" />
+    </p:column>
+ 
+    <p:column headerText="Empresa">
+        <h:outputText value="#{em.empresa_nome}" />
+    </p:column>
+    
+    <p:column headerText="CNPJ">
+        <h:outputText value="#{em.cnpj}" />
+    </p:column>
+    <p:column headerText="Inscrição Estadual">
+        <h:outputText value="#{em.empresa_nome}" />
+    </p:column>
+ 
+    <p:column headerText="Telefone">
+        <h:outputText value="#{em.telefone}" />
+    </p:column>
+ 
+    <p:column headerText="Site">
+        <h:outputText value="#{em.site}" />
+    </p:column>
+</p:dataTable>
+ 
+
+</h:form>
+</h:body>
+</html> 

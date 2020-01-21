@@ -1,0 +1,81 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+       xmlns:ui="http://java.sun.com/jsf/facelets">
+ <h:head>
+ <title>TELA CONSULTAR EMPRESA</title>
+   <link rel="stylesheet" type="text/css"  href="css/cssmenu.css"/> 
+   <style type="text/css"> </style>
+ </h:head>
+ 
+ <h:body>
+ <p:growl id="msgs" showDetail="false" showSummary="true"/>
+ 
+     <div>
+ <ui:include src="MENU.xhtml"/>   
+    
+    </div>
+      
+  <h:form id="form">
+  
+  
+   <p:dataTable var="empresa" value="#{beanEmpresa.empresas}" scrollable="true" scrollWidth="100%" scrollHeight="100%">
+    <f:facet name="header"> 
+          <h3> EMPRESA </h3>
+    </f:facet>
+    <p:column style="width:82px" headerText="Id">
+    
+        <h:outputText value="#{empresa.empresa_id}" />
+    </p:column>
+ 
+    <p:column headerText="Nome" width="200">
+        <h:outputText value="#{empresa.empresa_nome}" />
+    </p:column>  
+    
+    <p:column headerText="CNPJ" width="200">
+        <h:outputText value="#{empresa.cnpj}" />
+    </p:column>  
+    
+     <p:column headerText="Inscrição Estadual" width="200">
+        <h:outputText value="#{empresa.inscricao_estadual}" />
+    </p:column>  
+    
+     <p:column headerText="Endereço" width="200">
+        <h:outputText value="#{empresa.endereco}" />
+    </p:column> 
+    
+     <p:column headerText="Telefone" width="200">
+        <h:outputText value="#{empresa.telefone}" />
+    </p:column> 
+    
+     <p:column headerText="Fax" width="200">
+        <h:outputText value="#{empresa.fax}" />
+     </p:column> 
+         <p:column headerText="Site" width="200">
+        <h:outputText value="#{empresa.site}" />
+          </p:column> 
+        <p:column headerText="Contato" width="200">
+        <h:outputText value="#{empresa.nome_contato}" />
+          </p:column>  
+    
+    <p:column  style="width:82px" headerText="Ação" >
+    
+       <p:commandButton id="Editar" title="Editar" icon="ui-icon-pencil" action="#{beanEmpresa.editar(empresa)}" />
+      
+       <p:commandButton id="Excluir" title="Excluir" icon="ui-icon-trash" action="#{beanEmpresa.excluir(empresa)}"  update="@form" />
+  
+    </p:column>  
+  
+    </p:dataTable>
+    
+     <p:commandButton icon="ui-icon-document" action="#{beanEmpresa.Novo}" value="Novo Cadastro" />
+      <p:commandButton icon="ui-icon-document" action="#{beanEmpresa.Voltar}" value="Home" />
+  
+  </h:form> 
+
+ </h:body> 
+    
+    
+    
+</html>

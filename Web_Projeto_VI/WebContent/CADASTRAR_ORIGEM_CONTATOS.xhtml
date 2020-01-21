@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+
+<h:head>
+	<title>CADASTRAR ORIGEM DE CONTATO</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+
+	<div>
+		<ui:include src="MENU.xhtml" />
+
+	</div>
+
+	<p:growl id="msgs" showDetail="false" showSummary="true" />
+
+	<p:panel header="CADASTRO DE ORIGEM DE CONTATO">
+
+		<h:form id="edicao">
+
+
+			<p:growl id="messages" />
+
+
+
+
+			<h:panelGrid columns="2" cellpadding="5" cellspacing="5">
+
+
+
+				<h:inputHidden value="Id:" />
+				<h:inputHidden
+					value="#{beanOrigem_contato.origem_contato.origem_contato_id}" />
+
+
+				<h:outputText value="Descricao: " />
+				<p:inputText value="#{beanOrigem_contato.origem_contato.descricao}" />
+
+
+			</h:panelGrid>
+
+			<br></br>
+			<p:commandButton
+				action="#{beanOrigem_contato.voltar(origem_contato)}" value="Voltar" />
+			<p:commandButton action="#{beanOrigem_contato.salvar}" value="Salvar"
+				update="@form" />
+
+		</h:form>
+	</p:panel>
+</h:body>
+</html>

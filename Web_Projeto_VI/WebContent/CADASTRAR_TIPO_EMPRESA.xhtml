@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<title>CADASTRAR TIPO DE EMPRESA</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+	<p:growl id="msgs" showDetail="false" showSummary="true" />
+
+	<p:panel header="CADASTRO DE TIPO DE EMPRESA">
+
+		<h:form id="edicao">
+
+
+			<p:growl id="messages" />
+
+			<h:panelGrid columns="2" cellpadding="5" cellspacing="5">
+
+				<h:inputHidden value="Id: " />
+				<h:inputHidden
+					value="#{beanTipo_empresa.tipo_empresa.tipo_empresa_id}" />
+
+				<h:outputText value="descricao: " />
+				<p:inputText value="#{beanTipo_empresa.tipo_empresa.descricao}" />
+
+			</h:panelGrid>
+			<br />
+			<p:commandButton action="#{beanTipo_empresa.voltar(tipo_empresa)}"
+				value="Voltar" />
+			<p:commandButton action="#{beanTipo_empresa.salvar}" value="Salvar"
+				update="@form" />
+
+		</h:form>
+	</p:panel>
+</h:body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+
+<h:head>
+	<title>CADASTRAR PRODUTO</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+
+	<div>
+		<ui:include src="MENU.xhtml" />
+
+	</div>
+
+
+	<p:panel header="CADASTRO DE PRODUTOS">
+
+		<h:form id="edicao">
+
+
+			<p:growl id="messages" />
+
+
+
+
+			<h:panelGrid columns="2" cellpadding="5" cellspacing="5">
+
+				<h:inputHidden value="Id:" />
+				<h:inputHidden value="#{beanProduto.produto.produto_id}" />
+
+
+				<h:outputText value="Descricao:" />
+				<p:inputText value="#{beanProduto.produto.descricao}" />
+
+				<h:outputText value="Valor R$:" />
+				<p:inputText value="#{beanProduto.produto.valor}" />
+
+			</h:panelGrid>
+			<br />
+			<p:commandButton action="#{beanProduto.salvar}" value="Salvar"
+				update="@form" />
+			<p:commandButton action="#{beanProduto.voltar(produto)}"
+				value="Voltar" />
+
+		</h:form>
+	</p:panel>
+</h:body>
+</html>

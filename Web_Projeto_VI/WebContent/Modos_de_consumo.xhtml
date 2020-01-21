@@ -1,0 +1,29 @@
+<html  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html" 
+  xmlns:f="http://java.sun.com/jsf/core" 
+  xmlns:p="http://primefaces.org/ui" >
+  
+ 
+ <h:head>
+ <title>Modos de consumo</title>
+ </h:head>
+ 
+ <link rel="stylesheet" type="text/css"  href="css/TelaCadastroEmpresa2.css"/> 
+   <style type="text/css"> </style>
+  
+ <h:body> 
+ 
+ <p:panel header="TIPOS DE CONSUMO"> 
+ 
+  <div id="logo">
+ 
+ </div>
+ 
+ <p:commandButton id="dia_semana" action="#{beanVenda.novo(venda)}" value="Dia de semana" />
+   <p:commandButton id="fim_semana" action="#{beanVenda.novo(venda)}" value="Fim de semana" />
+ 
+ </p:panel>
+</h:body>
+
+
+</html> 

@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>TELA CONSULTAR TIPO COMUNICADOR</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+	<p:growl id="msgs" showDetail="false" showSummary="true" />
+	<div>
+		<ui:include src="MENU.xhtml" />
+
+	</div>
+
+
+	<h:form id="form">
+
+		<p:dataTable var="tipo_comunicador"
+			value="#{beanTipo_comunicador.tipo_comunicadores}" reflow="true"
+			rows="8" paginator="true">>
+   
+    <f:facet name="header">
+				<h1>TIPO DE COMUNICADOR</h1>
+			</f:facet>
+			<p:column style="width:82px" headerText="Id">
+
+				<h:outputText value="#{tipo_comunicador.tipo_comunicador_id}" />
+			</p:column>
+
+			<p:column headerText="Tipo de Comunicador">
+				<h:outputText value="#{tipo_comunicador.tipo_comunicador_descricao}" />
+			</p:column>
+			<p:column style="width:82px" headerText="Ação">
+
+				<p:commandButton id="Editar" title="Editar" icon="ui-icon-pencil"
+					action="#{beanTipo_comunicador.editar(tipo_comunicador)}" />
+
+				<p:commandButton id="Excluir" title="Excluir" icon="ui-icon-trash"
+					action="#{beanTipo_comunicador.excluir(tipo_comunicador)}"
+					update="@form" />
+
+			</p:column>
+
+		</p:dataTable>
+
+		<p:commandButton icon="ui-icon-document"
+			action="#{beanTipo_comunicador.novo(tipo_comunicador)}"
+			value="Novo Cadastro" />
+		<p:commandButton icon="ui-icon-document"
+			action="#{beanTipo_comunicador.voltar(tipo_comunicador)}"
+			value="Home" />
+
+	</h:form>
+
+</h:body>
+
+
+
+</html>

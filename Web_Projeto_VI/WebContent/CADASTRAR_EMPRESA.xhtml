@@ -1,0 +1,111 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>CADASTRAR EMPRESA</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+
+	<div>
+		<ui:include src="MENU.xhtml" />
+
+	</div>
+
+	<p:panel header="CADASTRO DE EMPRESA">
+
+		<p:messages showDetail="false" showSummary="true" autoUpdate="true" />
+
+		<h:form id="edicao">
+
+
+			<p:growl id="messages" />
+
+			<h:panelGrid columns="2" cellpadding="5" cellspacing="5">
+
+				<h:inputHidden value="Id" />
+				<h:inputHidden value="#{beanEmpresa.empresa.empresa_id}"
+					style="width:70px" />
+
+				<h:outputText value="Nome da Empresa" />
+				<p:inputText value="#{beanEmpresa.empresa.empresa_nome}"
+					style="width:250px" />
+
+				<p:outputLabel value="Tipo de Empresa" />
+				<p:selectOneMenu id="boxTipo_empresa"
+					value="#{beanEmpresa.empresa.tipo_empresa.tipo_empresa_id}"
+					style="width:250px" requiredMessage="Selecione um Tipo de Empresa">
+					<f:selectItem itemLabel="Selecione um Tipo de Empresa" itemValue="" />
+					<f:selectItems value="#{beanEmpresa.tipo_empresas}"
+						var="tipo_empresa"
+						 itemLabel="#{tipo_empresa.descricao}"
+						itemValue="#{tipo_empresa.tipo_empresa_id}" />
+				</p:selectOneMenu>
+
+				<h:outputText value="CNPJ" />
+				<p:inputMask mask="99.999.999/9999-99"
+					value="#{beanEmpresa.empresa.cnpj}" style="width:250px" />
+
+				<h:outputText value="Inscrição Estadual" />
+				<p:inputMask mask="999.999.999.999"
+					value="#{beanEmpresa.empresa.inscricao_estadual}"
+					style="width:250px" />
+
+				<h:outputText value="Endereço" />
+				<p:inputText value="#{beanEmpresa.empresa.endereco}"
+					style="width:250px" />
+
+				<h:outputText value="Telefone" />
+				<p:inputMask mask="(99)9999-9999"
+					value="#{beanEmpresa.empresa.telefone}" style="width:250px" />
+
+				<h:outputText value="Fax" />
+				<p:inputMask mask="(99)9999-9999" value="#{beanEmpresa.empresa.fax}"
+					style="width:250px" />
+
+				<h:outputText value="Site" />
+				<p:inputText value="#{beanEmpresa.empresa.site}" style="width:250px" />
+
+				<h:outputText value="Contato" />
+				<p:inputText action="#{beanEmpresa.empresa.nome_contato}"
+					style="width:250px" />
+
+				<p:outputLabel value="Tipo Comunicador" />
+				<p:selectOneMenu
+					value="#{beanEmpresa.empresa.tipo_comunicador.tipo_comunicador_id}"
+					style="width:250px" id="tipo_comunicador" requered="true"
+					requeredMessage="Selecione um Tipo de comunicador">
+					<f:selectItem itemLabel="Selecione" itemValue="" />
+					<f:selectItems value="#{beanEmpresa.tipo_comunicadores}"
+						var="tipo_comunicador"
+						itemValue="#{tipo_comunicador.tipo_comunicador_id}"
+						itemLabel="#{tipo_comunicador.tipo_comunicador_descricao}" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Tipo Contato" />
+				<p:selectOneMenu
+					value="#{beanEmpresa.empresa.tipo_contato.tipo_contato_id}"
+					style="width:250px" id="tipo_comtato" requered="true"
+					requeredMessage="Selecione um Tipo de contato">
+					<f:selectItem itemLabel="Selecione" itemValue="" />
+					<f:selectItems value="#{beanTipo_contato.tipo_contatos}"
+						var="tipo_contato" itemValue="#{tipo_contato.tipo_contato_id}"
+						itemLabel="#{tipo_contato.descricao}" />
+				</p:selectOneMenu>
+
+			</h:panelGrid>
+			<br />
+			<p:commandButton action="#{beanEmpresa.Salvar}" value="Salvar"
+				update="@form" />
+			<p:commandButton action="#{beanEmpresa.Voltar}" value="Voltar" />
+
+		</h:form>
+	</p:panel>
+</h:body>
+</html>

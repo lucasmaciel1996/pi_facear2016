@@ -1,0 +1,85 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>HISTORICO LIGAÇÂO</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+	<p:growl id="msgs" showDetail="false" showSummary="true" />
+	<div>
+		<ui:include src="MENU.xhtml" />
+
+	</div>
+
+
+	<h:form id="form">
+
+
+
+		<p:dataTable var="historico"
+			value="#{Bean_historico_ligacao.historico_ligacoes}" reflow="true"
+			rows="8" paginator="true">
+
+
+			<f:facet name="header">
+				<h1>HISTORICO LIGAÇÃO</h1>
+
+
+			</f:facet>
+
+
+
+			<p:column style="width:82px" headerText="Id">
+
+				<h:outputText value="#{historico.historico_id}" />
+			</p:column>
+
+			<p:column headerText="Descrição">
+				<h:outputText value="#{historico.descricao}" />
+			</p:column>
+			<p:column headerText="Data">
+				<h:outputText value="#{historico.data}">
+					<f:convertDateTime pattern="dd/MM/yyyy " />
+				</h:outputText>
+			</p:column>
+			<p:column headerText="Empresa">
+				<h:outputText value="#{historico.empresa.empresa_nome}" />
+			</p:column>
+
+			<p:column headerText="Tipo de Ligação">
+				<h:outputText value="#{historico.tipo_ligacao.descricao}" />
+			</p:column>
+
+
+			<p:column style="width:82px" headerText="Ação">
+				<p:commandButton id="Editar" title="Editar"
+					action="#{Bean_historico_ligacao.Editar(historico)}"
+					icon="ui-icon-pencil" update="@form" />
+
+				<p:commandButton id="Excluir" title="Excluir"
+					action="#{Bean_historico_ligacao.Excluir(historico)}"
+					icon="ui-icon-trash" update="@form" />
+
+			</p:column>
+
+		</p:dataTable>
+
+		<p:commandButton icon="ui-icon-document"
+			action="#{Bean_historico_ligacao.novo}" value="Novo Cadastro" />
+			<p:commandButton icon="ui-icon-document"
+			action="#{Bean_historico_ligacao.voltar}" value="Home" />
+
+
+	</h:form>
+
+</h:body>
+
+
+
+</html>

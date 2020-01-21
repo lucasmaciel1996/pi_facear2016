@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	 xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<h:head>
+	<title>CADASTRAR TIPO DE TELEFONE</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+	<p:growl id="msgs" showDetail="false" showSummary="true" />
+
+
+	<p:panel header="CADASTRO DE TIPO DE CONTATO">
+
+		<h:form id="edicao">
+
+
+			<p:growl id="messages" />
+
+
+
+
+			<h:panelGrid columns="2" cellpadding="5" cellspacing="5">
+
+
+
+				<h:inputHidden value="Id:" />
+				<h:inputHidden value="#{beanTipo_contato.tipo_contato.tipo_contato_id}" />
+
+
+				<h:outputText value="descricao: " />
+				<p:inputText value="#{beanTipo_contato.tipo_contato.descricao}" />
+
+			</h:panelGrid>
+			<br />
+			<p:commandButton action="#{beanTipo_contato.voltar(tipo_contato)}"
+				value="Voltar" />
+			<p:commandButton action="#{beanTipo_contato.salvar}" value="Salvar"
+				update="@form" />
+
+		</h:form>
+		
+		
+		
+	</p:panel>
+</h:body>
+</html>

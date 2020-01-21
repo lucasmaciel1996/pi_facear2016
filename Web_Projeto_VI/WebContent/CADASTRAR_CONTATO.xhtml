@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<h:head>
+	<title>CADASTRAR CONTATO</title>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css" />
+	<style type="text/css">
+</style>
+</h:head>
+
+<h:body>
+
+	<div>
+		<ui:include src="MENU.xhtml" />
+
+	</div>
+	
+	<p:growl id="msgs" showDetail="false" showSummary="true" />
+
+	<p:panel header="CADASTRAR CONTATO">
+
+		<h:form id="edicao">
+
+			<p:growl id="messages" />
+
+			<h:panelGrid columns="2" cellpadding="5" cellspacing="5">
+
+				<h:inputHidden value="Id " />
+				<h:inputHidden value="#{beanContato.contato.id_contato}" />
+
+
+
+				<h:outputText value="Nome" />
+				<p:inputText style="width:350px"
+					value="#{beanContato.contato.nome_contato}" />
+
+
+
+				<p:outputLabel value="Empresa" />
+				<p:selectOneMenu value="#{beanContato.contato.empresa.empresa_id}"
+					style="width:360px" requiredMessage="Selecione Empresa">
+					<f:selectItem itemLabel="Selecione Empresa" itemValue="" />
+					<f:selectItems value="#{beanContato.empresas}" var="empresa"
+						itemValue="#{empresa.empresa_id}"
+						itemLabel="#{empresa.empresa_nome}" />
+				</p:selectOneMenu>
+
+
+			</h:panelGrid>
+			<br />
+
+			<p:commandButton action="#{beanContato.salvar}" value="Salvar"
+				update="@form:messages" />
+
+		</h:form>
+	</p:panel>
+</h:body>
+</html>
